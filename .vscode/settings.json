@@ -4,5 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true
-  }
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "css.customData": ["./css-data.json"]
 }
