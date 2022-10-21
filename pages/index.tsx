@@ -1,37 +1,28 @@
-import { NextPageWithLayout } from './page';
-// import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import CatCard from '../components/cards/cat/CatCard';
-import {mockCatCardProps} from '../components/cards/cat/CatCard.mocks';
+import { mockCatCardProps } from '../components/cards/cat/CatCard.mocks';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
+// import Image from 'next/image';
+import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <div className={styles.grid}>
-          <CatCard {...mockCatCardProps.base} />
-          <CatCard {...mockCatCardProps.base} />
-          <CatCard {...mockCatCardProps.base} />
-          <CatCard {...mockCatCardProps.base} />
-        </div>
-      </main>
-    </div>
+    <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
+      <h1>
+        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      </h1>
+      <CatCard {...mockCatCardProps.base} />
+    </section>
   );
 };
 
 export default Home;
 
-Home.getLayout = (page) => {
+Home.getLayout = page => {
   return (
     <PrimaryLayout>
       <SidebarLayout />
       {page}
     </PrimaryLayout>
-  )
-}
+  );
+};
