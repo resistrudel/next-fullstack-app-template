@@ -28,4 +28,5 @@ module.exports = {
     },
   },
   plugins: [],
+  preflight: false,
 };

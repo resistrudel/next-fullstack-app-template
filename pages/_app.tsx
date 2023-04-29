@@ -1,7 +1,9 @@
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import type { AppProps } from 'next/app';
+import theme from '../src/theme';
 import './globals.css';
 import { NextPageWithLayout } from './page';
-import type { AppProps } from 'next/app';
-import { AuthProvider } from '../state/auth/AuthContext';
 
 interface AppPropsWithLayout extends AppProps {
   Component: NextPageWithLayout;
@@ -10,8 +12,16 @@ interface AppPropsWithLayout extends AppProps {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);
-
-  return <AuthProvider>{getLayout(<Component {...pageProps} />)}</AuthProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      {getLayout(
+        <>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </>
+      )}
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;

@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   swcMinify: true,
+  reactStrictMode: false,
   images: {
-    domains: ['i.pravatar.cc'],
+    domains: ['i.pravatar.cc', 'placehold.co'],
   },
 };
 

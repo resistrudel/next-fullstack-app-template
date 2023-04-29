@@ -65,6 +65,6 @@ const Results: NextPageWithLayout<IResults> = ({ searchResults }) => {
 
 export default Results;
 
-Results.getLayout = page => {
+Results.getLayout = (page) => {
   return <PrimaryLayout justify="items-start">{page}</PrimaryLayout>;
 };
